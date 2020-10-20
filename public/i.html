@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script src="core.js"></script>
+        <script src="checkImage.js"></script>
+        <p id="msg">Loading...</p>
+        <div id="passContainer" style="display: none">
+            <p>Enter password</p>
+            <input type="text" id="passInput" />
+            <button id="unlockBtn" onclick="unlockImg()">Unlock</button>
+        </div>
+        <div id="notFound" style="display: none">
+            <p>Image not found</p>
+        </div>
+        <div id="wrongPass" style="display: none">
+            <p color="red">Wrong password</p>
+        </div>
+        <img id="imag" />
+    </body>
+</html>
