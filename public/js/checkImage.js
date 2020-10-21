@@ -9,8 +9,7 @@ export function checkImage(id) {
     }).then((response) => {
         if (response.status == 200) {
             document.getElementById("msg").innerHTML = "Image Found";
-            document.getElementById("passContainer").style.display =
-                "inline";
+            document.getElementById("passContainer").style.display = "inline";
             const password = document.getElementById("passInput");
         } else {
             document.getElementById("msg").innerHTML = "Image Not Found";

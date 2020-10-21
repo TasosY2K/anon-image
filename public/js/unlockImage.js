@@ -1,6 +1,6 @@
 export function unlockImage() {
     const password = document.getElementById("passInput").value;
-    
+
     fetch("/serve", {
         method: "post",
         headers: {

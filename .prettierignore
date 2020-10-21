@@ -1,2 +1,5 @@
 # Libraries
 lib
+
+# Webpack Bundle Folder
+dist

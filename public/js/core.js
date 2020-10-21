@@ -11,17 +11,21 @@ switch (pathname) {
         break;
     case "/index.html":
         console.log(2);
-        document.getElementById("uploadBtn").addEventListener("click", uploadImage);
+        document
+            .getElementById("uploadBtn")
+            .addEventListener("click", uploadImage);
         break;
     case "/i.html":
         console.log(3);
-        document.getElementById("unlockBtn").addEventListener("click", unlockImage);
+        document
+            .getElementById("unlockBtn")
+            .addEventListener("click", unlockImage);
 
         const srch = window.location.search;
 
         if (srch && srch.includes("?l=")) {
             const id = srch.split("=")[1];
-            checkImage(id)
+            checkImage(id);
         } else {
             window.location.replace("/index.html");
         }

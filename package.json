@@ -8,7 +8,8 @@
         "watch": "nodemon .",
         "db:setup": "node scripts/database/setupDatabase.js",
         "db:drop": "node scripts/database/deleteDatabase.js",
-        "format": "npx prettier --write ."
+        "format": "npx prettier --write .",
+        "build": "webpack"
     },
     "keywords": [],
     "author": "",
