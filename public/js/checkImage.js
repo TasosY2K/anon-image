@@ -1,30 +1,19 @@
-console.log("Loaded checkImage.js");
-
-const unlockImg = () => {
-    const password = document.getElementById("passInput").value;
-    fetch("/serve", {
+export function checkImage(id) {
+    fetch("/check", {
         method: "post",
         headers: {
             Accept: "application/json",
             "Content-Type": "application/json"
         },
-        body: JSON.stringify({
-            id: window.location.search.split("=")[1],
-            password: password
-        })
+        body: JSON.stringify({ id: id })
     }).then((response) => {
         if (response.status == 200) {
-            document.getElementById("msg").innerHTML = "Correct Password";
-            document.getElementById("passContainer").style.display = "none";
-            response.json().then((data) => {
-                data = JSON.parse(data);
-                console.log(data.data);
-                document.getElementById("imag").setAttribute("src", data.data);
-            });
+            document.getElementById("msg").innerHTML = "Image Found";
+            document.getElementById("passContainer").style.display =
+                "inline";
+            const password = document.getElementById("passInput");
         } else {
-            document.getElementById("msg").innerHTML = "Wrong Password";
+            document.getElementById("msg").innerHTML = "Image Not Found";
         }
     });
-};
-
-document.getElementById("unlockBtn").addEventListener("click", unlockImg);
+}

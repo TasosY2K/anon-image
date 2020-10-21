@@ -1,30 +1,30 @@
+import { uploadImage } from "./uploadImage.js";
+import { checkImage } from "./checkImage.js";
+import { unlockImage } from "./unlockImage.js";
+
 const pathname = window.location.pathname;
 
-console.log("Loaded core.js");
+switch (pathname) {
+    case "/":
+        console.log(1);
+        window.location.replace("/index.html");
+        break;
+    case "/index.html":
+        console.log(2);
+        document.getElementById("uploadBtn").addEventListener("click", uploadImage);
+        break;
+    case "/i.html":
+        console.log(3);
+        document.getElementById("unlockBtn").addEventListener("click", unlockImage);
 
-if (pathname == "/") window.location.replace("/index.html");
+        const srch = window.location.search;
 
-if (pathname == "/i.html") {
-    const srch = window.location.search;
-    if (srch && srch.includes("?l=")) {
-        const id = srch.split("=")[1];
-        const payload = { id: id };
-        fetch("/check", {
-            method: "post",
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(payload)
-        }).then((response) => {
-            if (response.status == 200) {
-                document.getElementById("msg").innerHTML = "Image Found";
-                document.getElementById("passContainer").style.display =
-                    "inline";
-                const password = document.getElementById("passInput");
-            } else {
-                document.getElementById("msg").innerHTML = "Image Not Found";
-            }
-        });
-    }
+        if (srch && srch.includes("?l=")) {
+            const id = srch.split("=")[1];
+            checkImage(id)
+        } else {
+            window.location.replace("/index.html");
+        }
+
+        break;
 }

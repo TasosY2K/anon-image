@@ -1,5 +1,3 @@
-console.log("Loaded uploadImage.js");
-
 const getBase64 = (file) => {
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
@@ -9,7 +7,7 @@ const getBase64 = (file) => {
     });
 };
 
-const uploadImage = () => {
+export function uploadImage() {
     document.getElementById("msg").innerHTML = "Uploading Image...";
     let imagePassword = document.getElementById("imagePassword").value;
     let imageData = document.getElementById("imageToUpload").files[0];
@@ -35,6 +33,4 @@ const uploadImage = () => {
             }
         });
     });
-};
-
-document.getElementById("uploadBtn").addEventListener("click", uploadImage);
+}

@@ -13,7 +13,7 @@ module.exports = (app, con, globalConfig) => {
             const ip_address = req.ip;
             const time_uploaded = moment().format("YYYY-MM-DD HH:mm:ss");
 
-            const local_path = `${__dirname}/../uploads/${id}.jpg`;
+            const local_path = `${__dirname}/../uploads/${id}.b64`;
 
             fs.appendFileSync(local_path, imgData);
 
