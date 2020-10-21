@@ -1,7 +1,15 @@
 module.exports = {
-    entry: "./public/js/core.js",
+    entry: "./static/js/core.js",
     output: {
-        path: __dirname + "/public/dist",
+        path: __dirname + "/public",
         filename: "bundle.js"
+    },
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: ["style-loader", "css-loader"]
+            }
+        ]
     }
 };

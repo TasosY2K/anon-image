@@ -1,3 +1,7 @@
+import "bootstrap";
+import "../css/bootstrap/bootstrap.min.css";
+import "../css/main.css";
+
 import { uploadImage } from "./uploadImage.js";
 import { checkImage } from "./checkImage.js";
 import { unlockImage } from "./unlockImage.js";

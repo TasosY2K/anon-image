@@ -1,5 +1,5 @@
-# Libraries
-lib
+# Bootstrap
+bootstrap
 
-# Webpack Bundle Folder
-dist
+# Webpack Bundle
+bundle.js
