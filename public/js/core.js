@@ -1,6 +1,6 @@
-console.log("Loaded core.js");
+const pathname = window.location.pathname;
 
-let pathname = window.location.pathname;
+console.log("Loaded core.js");
 
 if (pathname == "/") window.location.replace("/index.html");
 
@@ -17,13 +17,13 @@ if (pathname == "/i.html") {
             },
             body: JSON.stringify(payload)
         }).then((response) => {
-            document.getElementById("msg").style.display = "none";
             if (response.status == 200) {
+                document.getElementById("msg").innerHTML = "Image Found";
                 document.getElementById("passContainer").style.display =
                     "inline";
                 const password = document.getElementById("passInput");
             } else {
-                document.getElementById("notFound").style.display = "inline";
+                document.getElementById("msg").innerHTML = "Image Not Found";
             }
         });
     }

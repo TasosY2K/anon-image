@@ -4,12 +4,58 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
+        <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css" />
+        <script src="lib/jquery/jquery.min.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="lib/popper/popper.min.js"></script>
+        <link rel="stylesheet" href="css/main.css" />
     </head>
     <body>
-        <input type="file" name="image" id="imageToUpload" />
-        <input type="text" id="imagePassword" />
-        <button onclick="uploadImage()">Upload</button>
-        <script src="core.js"></script>
-        <script src="uploadImage.js"></script>
+        <div class="container center">
+            <div class="row">
+                <div class="col-md">
+                    <h1>Anon Image</h1>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-md">
+                    <div class="input-group mb-3">
+                        <div class="custom-file">
+                            <input
+                                class="form-control custom-file-input"
+                                type="file"
+                                name="image"
+                                id="imageToUpload"
+                            />
+                            <label
+                                class="custom-file-label"
+                                for="inputGroupFile01"
+                                >Choose file</label
+                            >
+                        </div>
+                    </div>
+                    <input
+                        class="form-control"
+                        type="password"
+                        id="imagePassword"
+                        placeholder="Enter Password"
+                    />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <button class="btn btn-primary btn-block" id="uploadBtn">
+                        Upload
+                    </button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <p id="msg"></p>
+                </div>
+            </div>
+        </div>
+        <script src="js/core.js"></script>
+        <script src="js/uploadImage.js"></script>
     </body>
 </html>

@@ -1,6 +1,5 @@
 module.exports = (app, con, globalConfig) => {
     app.post("/check", (req, res) => {
-        console.log(req.body);
         if (req.body) {
             const { id } = req.body;
             con.query(

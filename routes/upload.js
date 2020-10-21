@@ -24,7 +24,10 @@ module.exports = (app, con, globalConfig) => {
                     if (err) {
                         console.log(err);
                     } else {
-                        res.status(200).send("Upload OK");
+                        res.status(200).json({
+                            message: "Upload OK",
+                            id: id
+                        });
                     }
                 }
             );

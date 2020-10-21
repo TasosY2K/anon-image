@@ -5,7 +5,6 @@ module.exports = (app, con, globalConfig) => {
     app.post("/serve", (req, res) => {
         if (req.body) {
             const { id, password } = req.body;
-            console.log(req.body);
             con.query(
                 "SELECT pass FROM Images WHERE id = ?",
                 [id],
@@ -21,7 +20,7 @@ module.exports = (app, con, globalConfig) => {
                                     (err, rows) => {
                                         const imageData = fs.readFileSync(
                                             rows[0].local_path,
-                                            "base64"
+                                            "utf8"
                                         );
                                         res.status(200).json(
                                             JSON.stringify({ data: imageData })

@@ -4,22 +4,49 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Document</title>
+        <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css" />
+        <script src="lib/jquery/jquery.min.js"></script>
+        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        <script src="lib/popper/popper.min.js"></script>
+        <link rel="stylesheet" href="css/main.css" />
     </head>
     <body>
-        <script src="core.js"></script>
-        <script src="checkImage.js"></script>
-        <p id="msg">Loading...</p>
-        <div id="passContainer" style="display: none">
-            <p>Enter password</p>
-            <input type="text" id="passInput" />
-            <button id="unlockBtn" onclick="unlockImg()">Unlock</button>
+        <div class="container center">
+            <div class="row">
+                <div class="col-md">
+                    <p id="msg">Loading...</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <div id="passContainer" style="display: none">
+                        <div class="input-group mb-3">
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="passInput"
+                                placeholder="Enter Password"
+                            />
+                            <div class="input-group-append">
+                                <button
+                                    class="btn btn-primary"
+                                    id="unlockBtn"
+                                    type="button"
+                                >
+                                    Unlock
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <img class="img-fluid" id="imag" />
+                </div>
+            </div>
         </div>
-        <div id="notFound" style="display: none">
-            <p>Image not found</p>
-        </div>
-        <div id="wrongPass" style="display: none">
-            <p color="red">Wrong password</p>
-        </div>
-        <img id="imag" />
+        <script src="js/core.js"></script>
+        <script src="js/checkImage.js"></script>
     </body>
 </html>
