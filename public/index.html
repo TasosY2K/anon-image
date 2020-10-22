@@ -3,45 +3,74 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
+        <title>Anon Image | Upload Anonymous Password Protected Images</title>
     </head>
     <body>
         <div class="container center">
             <div class="row">
                 <div class="col-md">
                     <h1>Anon Image</h1>
-                </div>
-            </div>
-            <div class="row mb-3">
-                <div class="col-md">
-                    <div class="input-group mb-3">
-                        <div class="custom-file">
-                            <input
-                                class="form-control custom-file-input"
-                                type="file"
-                                name="image"
-                                id="imageToUpload"
-                            />
-                            <label
-                                class="custom-file-label"
-                                for="inputGroupFile01"
-                                >Choose file</label
-                            >
-                        </div>
-                    </div>
-                    <input
-                        class="form-control"
-                        type="password"
-                        id="imagePassword"
-                        placeholder="Enter Password"
-                    />
+                    <p>Upload Anonymous Password Protected Images</p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md">
-                    <button class="btn btn-primary btn-block" id="uploadBtn">
-                        Upload
-                    </button>
+                <div class="col-md-6 offset-md-3">
+                    <div
+                        class="custom-file-container"
+                        data-upload-id="myUniqueUploadId"
+                    >
+                        <div class="input-group">
+                            <div class="custom-file">
+                                <label
+                                    class="custom-file-container__custom-file"
+                                >
+                                    <input
+                                        type="file"
+                                        id="imageToUpload"
+                                        class="custom-file-input custom-file-container__custom-file__custom-file-input"
+                                        accept="image/*"
+                                    />
+                                    <input
+                                        type="hidden"
+                                        name="MAX_FILE_SIZE"
+                                        value="10485760"
+                                    />
+                                    <span
+                                        class="custom-file-container__custom-file__custom-file-control"
+                                    ></span>
+                                </label>
+                            </div>
+                            <div class="input-group-append">
+                                <a
+                                    class="text-danger text-center ml-2 mt-2 custom-file-container__image-clear"
+                                    >Clear Image</a
+                                >
+                            </div>
+                        </div>
+                        <div
+                            class="custom-file-container__image-preview mt-3 mb-3"
+                        ></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="input-group">
+                        <input
+                            class="form-control"
+                            type="password"
+                            id="imagePassword"
+                            placeholder="Enter Password"
+                        />
+                        <div class="input-group-append">
+                            <button
+                                class="btn btn-primary btn-block"
+                                id="uploadBtn"
+                            >
+                                Upload
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="row">

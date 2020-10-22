@@ -1,5 +1,8 @@
+import FileUploadWithPreview from "file-upload-with-preview";
+import "file-upload-with-preview/dist/file-upload-with-preview.min.css";
+
 import "bootstrap";
-import "../css/bootstrap/bootstrap.min.css";
+import "../css/bootstrap.min.css";
 import "../css/main.css";
 
 import { uploadImage } from "./uploadImage.js";
@@ -10,17 +13,16 @@ const pathname = window.location.pathname;
 
 switch (pathname) {
     case "/":
-        console.log(1);
         window.location.replace("/index.html");
         break;
     case "/index.html":
-        console.log(2);
+        const upload = new FileUploadWithPreview("myUniqueUploadId");
+
         document
             .getElementById("uploadBtn")
             .addEventListener("click", uploadImage);
         break;
     case "/i.html":
-        console.log(3);
         document
             .getElementById("unlockBtn")
             .addEventListener("click", unlockImage);
