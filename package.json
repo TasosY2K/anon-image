@@ -16,6 +16,7 @@
     "license": "ISC",
     "dependencies": {
         "bcryptjs": "^2.4.3",
+        "check-password-strength": "^1.0.15",
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
         "moment": "^2.29.1",

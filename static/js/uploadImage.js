@@ -11,6 +11,7 @@ export function uploadImage() {
     document.getElementById("uploadBtn").innerHTML = "Uploading Image...";
     let imagePassword = document.getElementById("imagePassword").value;
     let imageData = document.getElementById("imageToUpload").files[0];
+    document.getElementById("uploadBtn").style.background = "#0076d6";
     getBase64(imageData).then((b64Data) => {
         fetch("/upload", {
             method: "post",
@@ -21,6 +22,8 @@ export function uploadImage() {
             body: JSON.stringify({ pass: imagePassword, imgData: b64Data })
         }).then((response) => {
             if (response.status == 200) {
+                document.getElementById("uploadBtn").style.background =
+                    "#00d42a";
                 response.json().then((data) => {
                     console.log(data);
                     document.getElementById("uploadBtn").innerHTML =
@@ -32,6 +35,8 @@ export function uploadImage() {
             } else {
                 document.getElementById("uploadBtn").innerHTML =
                     "Upload Failed";
+                document.getElementById("uploadBtn").style.background =
+                    "#d40f1c";
             }
         });
     });

@@ -1,14 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+
 body {
     background-color: #131417;
     color: rgb(235, 235, 235);
+    font-family: "Raleway", sans-serif;
+}
+
+*:focus {
+    outline: none !important;
 }
 
 .custom-file-container__image-preview {
     overflow: hidden !important;
+    margin: 0;
+    border-radius: 0%;
 }
 
-.custom-file-container__image-preview {
-    margin: 0;
+.custom-file-container__custom-file__custom-file-control {
+    background-color: transparent;
+    color: rgb(235, 235, 235);
+    border: solid 3px rgb(235, 235, 235);
+    border-radius: 0%;
+}
+
+.custom-file-container__custom-file__custom-file-control:hover {
+    background-color: rgb(235, 235, 235);
+    color: #000;
+}
+
+.custom-file-container__custom-file__custom-file-control__button {
+    display: none;
+}
+
+.custom-file-container__image-clear {
+    margin-top: 11px;
+    margin-left: 6px;
+    color: #d40f1c;
+    text-decoration: none;
+    z-index: 10;
+}
+
+.custom-file-container__image-clear:hover {
+    text-decoration: underline;
+    color: #d40f1c;
+}
+
+#imagePassword {
+    background-color: transparent;
+    color: rgb(235, 235, 235);
+    border-width: 0 0 3px 0;
+    border-style: solid;
+    border-color: rgb(235, 235, 235);
+    border-radius: 0%;
+}
+
+#uploadBtn {
+    background-color: transparent;
+    color: rgb(235, 235, 235);
+    border: solid 3px rgb(235, 235, 235);
+    border-radius: 0%;
+}
+
+#uploadBtn:hover {
+    background-color: rgb(235, 235, 235);
+    color: #000;
+}
+
+#passLabel {
+    float: left;
+}
+
+.lockBtn {
+    border-color: rgb(91, 98, 105) !important;
+    color: rgb(91, 98, 105) !important;
+    pointer-events: none;
+    cursor: not-allowed;
 }
 
 .center {

@@ -14,6 +14,7 @@ if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir);
 
 const globalConfig = process.env;
 
+//add database error handling
 const mysqlOptions = {
     host: process.env.DB_HOST,
     user: process.env.DB_USER,

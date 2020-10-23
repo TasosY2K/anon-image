@@ -3,14 +3,14 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Anon Image | Upload Anonymous Password Protected Images</title>
+        <title>Anon Image | Upload anonymous password protected images</title>
     </head>
     <body>
         <div class="container center">
             <div class="row">
                 <div class="col-md">
                     <h1>Anon Image</h1>
-                    <p>Upload Anonymous Password Protected Images</p>
+                    <p>Upload anonymous password protected images</p>
                 </div>
             </div>
             <div class="row">
@@ -20,7 +20,7 @@
                         data-upload-id="myUniqueUploadId"
                     >
                         <div class="input-group">
-                            <div class="custom-file">
+                            <div class="custom-file mr-1">
                                 <label
                                     class="custom-file-container__custom-file"
                                 >
@@ -40,12 +40,12 @@
                                     ></span>
                                 </label>
                             </div>
-                            <div class="input-group-append">
-                                <a
-                                    class="text-danger text-center ml-2 mt-2 custom-file-container__image-clear"
-                                    >Clear Image</a
-                                >
-                            </div>
+                            <a
+                                href="javascript:void(0);"
+                                id="clearImage"
+                                class="custom-file-container__image-clear"
+                                >Clear image</a
+                            >
                         </div>
                         <div
                             class="custom-file-container__image-preview mt-3 mb-3"
@@ -57,20 +57,18 @@
                 <div class="col-md-6 offset-md-3">
                     <div class="input-group">
                         <input
-                            class="form-control"
+                            class="form-control mr-3"
                             type="password"
                             id="imagePassword"
-                            placeholder="Enter Password"
+                            placeholder="Enter password"
                         />
                         <div class="input-group-append">
-                            <button
-                                class="btn btn-primary btn-block"
-                                id="uploadBtn"
-                            >
+                            <button class="lockBtn" id="uploadBtn">
                                 Upload
                             </button>
                         </div>
                     </div>
+                    <label for="password" id="passLabel"></label>
                 </div>
             </div>
             <div class="row">
