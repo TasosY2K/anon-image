@@ -6,8 +6,10 @@ body {
     font-family: "Raleway", sans-serif;
 }
 
-*:focus {
-    outline: none !important;
+input:focus,
+input:active {
+    outline: 0 !important;
+    box-shadow: none !important;
 }
 
 .custom-file-container__image-preview {
@@ -68,6 +70,24 @@ body {
 
 #passLabel {
     float: left;
+}
+
+#copyHref {
+    color: rgb(235, 235, 235);
+}
+
+#copyLabel {
+    text-decoration: underline;
+}
+
+#copyLabel:hover {
+    color: rgb(143, 143, 143);
+}
+
+#imageLink {
+    color: #000;
+    background-color: rgb(235, 235, 235);
+    padding: 2.5px;
 }
 
 .lockBtn {

@@ -1,3 +1,5 @@
+import { copyLink } from "./copyLink.js";
+
 const getBase64 = (file) => {
     return new Promise((resolve, reject) => {
         const reader = new FileReader();
@@ -11,7 +13,6 @@ export function uploadImage() {
     document.getElementById("uploadBtn").innerHTML = "Uploading Image...";
     let imagePassword = document.getElementById("imagePassword").value;
     let imageData = document.getElementById("imageToUpload").files[0];
-    document.getElementById("uploadBtn").style.background = "#0076d6";
     getBase64(imageData).then((b64Data) => {
         fetch("/upload", {
             method: "post",
@@ -22,21 +23,20 @@ export function uploadImage() {
             body: JSON.stringify({ pass: imagePassword, imgData: b64Data })
         }).then((response) => {
             if (response.status == 200) {
-                document.getElementById("uploadBtn").style.background =
-                    "#00d42a";
                 response.json().then((data) => {
                     console.log(data);
                     document.getElementById("uploadBtn").innerHTML =
                         "Image Uploaded";
                     document.getElementById(
                         "msg"
-                    ).innerHTML = `<br><a href="/i.html?l=${data.id}" target="_blank">copy this link to access it</a>`;
+                    ).innerHTML = `<span id="msgContainer"><a href="javascript:void(0);" id="copyHref">Copy</a> this link to share it</span><br><a id="imageLink" href="/i.html?l=${data.id}" target="_blank">${window.location.protocol}//${window.location.hostname}/i.html?l=${data.id}</a>`;
+                    document
+                        .getElementById("copyHref")
+                        .addEventListener("click", copyLink);
                 });
             } else {
                 document.getElementById("uploadBtn").innerHTML =
                     "Upload Failed";
-                document.getElementById("uploadBtn").style.background =
-                    "#d40f1c";
             }
         });
     });
