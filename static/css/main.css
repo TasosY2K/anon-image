@@ -97,6 +97,33 @@ input:active {
     padding: 2.5px;
 }
 
+#passContainer {
+    display: none;
+}
+
+#imageContainer {
+    display: none;
+    margin: 0%;
+}
+
+#passInput {
+    transition-duration: 0.2s;
+    background-color: transparent;
+    color: rgb(235, 235, 235);
+    border-width: 0 0 3px 0;
+    border-style: solid;
+    border-color: rgb(235, 235, 235);
+    border-radius: 0%;
+}
+
+#goHome {
+    color: rgb(235, 235, 235);
+    font-size: 19px;
+    padding: 7px;
+    position: absolute;
+    bottom: 0%;
+}
+
 .lockBtn {
     border-color: rgb(91, 98, 105) !important;
     color: rgb(91, 98, 105) !important;
@@ -112,6 +139,27 @@ input:active {
     transform: translate(-50%, -50%);
 }
 
+#downloadImage,
+#fullImage {
+    transition-duration: 0.2s;
+    background-color: transparent;
+    color: rgb(235, 235, 235);
+    border: solid 3px rgb(235, 235, 235);
+    border-radius: 0%;
+}
+
+#downloadImage:hover,
+#fullImage:hover {
+    background-color: rgb(235, 235, 235);
+    color: #000;
+}
+
 #imag {
-    border: #000 3px solid;
+    width: 50%;
+}
+
+@media screen and (max-width: 765px) {
+    #imag {
+        width: 100%;
+    }
 }

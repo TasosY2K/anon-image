@@ -8,11 +8,12 @@ export function checkImage(id) {
         body: JSON.stringify({ id: id })
     }).then((response) => {
         if (response.status == 200) {
-            document.getElementById("msg").innerHTML = "Image Found";
+            document.getElementById("msg").innerHTML =
+                "This image is password protected";
             document.getElementById("passContainer").style.display = "inline";
             const password = document.getElementById("passInput");
         } else {
-            document.getElementById("msg").innerHTML = "Image Not Found";
+            document.getElementById("msg").innerHTML = "Image not found";
         }
     });
 }

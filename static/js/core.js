@@ -52,8 +52,8 @@ switch (pathname) {
         break;
     case "/i.html":
         document
-            .getElementById("unlockBtn")
-            .addEventListener("click", unlockImage);
+            .getElementById("passInput")
+            .addEventListener("input", unlockImage);
 
         const srch = window.location.search;
 

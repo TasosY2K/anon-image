@@ -3,44 +3,36 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Anon Image | Upload Anonymous Password Protected Images</title>
+        <title>This image is password protected</title>
     </head>
     <body>
         <div class="container center">
             <div class="row">
-                <div class="col-md">
-                    <p id="msg">Loading...</p>
+                <div class="col-md mb-1">
+                    <div id="msg"></div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-md">
-                    <div id="passContainer" style="display: none">
-                        <div class="input-group mb-3">
-                            <input
-                                type="text"
-                                class="form-control"
-                                id="passInput"
-                                placeholder="Enter Password"
-                            />
-                            <div class="input-group-append">
-                                <button
-                                    class="btn btn-primary"
-                                    id="unlockBtn"
-                                    type="button"
-                                >
-                                    Unlock
-                                </button>
-                            </div>
-                        </div>
+            <div class="row" id="passContainer">
+                <div class="col-md-6 offset-md-3">
+                    <div class="input-group mb-3">
+                        <input
+                            type="password"
+                            class="form-control"
+                            id="passInput"
+                            placeholder="Enter password"
+                        />
                     </div>
                 </div>
             </div>
-            <div class="row">
+            <div class="row" id="imageContainer">
                 <div class="col-md">
-                    <img class="img-fluid" id="imag" />
+                    <img class="img-fluid mb-2" id="imag" /><br />
+                    <button id="downloadImage">Download</button>
+                    <button id="fullImage">View full</button>
                 </div>
             </div>
         </div>
+        <a id="goHome" href="/index.html">Upload a photo</a>
         <script src="bundle.js"></script>
     </body>
 </html>
