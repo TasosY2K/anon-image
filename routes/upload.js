@@ -10,7 +10,6 @@ module.exports = (app, con, globalConfig) => {
 
             const id = generator.id();
             const password = bcrypt.hashSync(pass);
-            const ip_address = req.ip;
             const time_uploaded = moment().format("YYYY-MM-DD HH:mm:ss");
 
             const local_path = `${__dirname}/../uploads/${id}.b64`;
@@ -18,8 +17,8 @@ module.exports = (app, con, globalConfig) => {
             fs.appendFileSync(local_path, imgData);
 
             con.query(
-                "INSERT INTO Images (id, pass, local_path, ip_address, time_uploaded) VALUES (?, ?, ?, ?, ?)",
-                [id, password, local_path, ip_address, time_uploaded],
+                "INSERT INTO Images (id, pass, local_path, time_uploaded) VALUES (?, ?, ?, ?)",
+                [id, password, local_path, time_uploaded],
                 (err) => {
                     if (err) {
                         console.log(err);

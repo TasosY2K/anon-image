@@ -10,6 +10,7 @@ import { checkPassword } from "./checkPassword.js";
 import { checkSize } from "./checkSize.js";
 import { checkImage } from "./checkImage.js";
 import { unlockImage } from "./unlockImage.js";
+import { setImageNumber } from "./setImageNumber.js";
 
 const pathname = window.location.pathname;
 
@@ -48,6 +49,8 @@ switch (pathname) {
         document
             .getElementById("imagePassword")
             .addEventListener("input", checkSize);
+
+        setImageNumber()
 
         break;
     case "/i.html":

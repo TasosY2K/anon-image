@@ -1,4 +1,5 @@
 import { copyLink } from "./copyLink.js";
+import { setImageNumber } from "./setImageNumber.js";
 
 const getBase64 = (file) => {
     return new Promise((resolve, reject) => {
@@ -26,6 +27,7 @@ export function uploadImage() {
         }).then((response) => {
             if (response.status == 200) {
                 response.json().then((data) => {
+                    setImageNumber();
                     setInterval(() => {
                         document.getElementById("uploadBtn").className = "";
                         document.getElementById("uploadBtn").innerHTML =

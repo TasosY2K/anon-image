@@ -158,6 +158,10 @@ input:active {
     width: 50%;
 }
 
+#statsContainer {
+    padding: 5px;
+}
+
 @media screen and (max-width: 765px) {
     #imag {
         width: 100%;
