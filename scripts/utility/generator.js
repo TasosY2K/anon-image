@@ -1,5 +1,5 @@
-const crypto = require("crypto");
+const shortid = require("shortid");
 
 exports.id = () => {
-    return crypto.randomBytes(16).toString("hex");
+    return shortid.generate();
 };

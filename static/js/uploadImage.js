@@ -10,9 +10,11 @@ const getBase64 = (file) => {
 };
 
 export function uploadImage() {
-    document.getElementById("uploadBtn").innerHTML = "Uploading Image...";
     let imagePassword = document.getElementById("imagePassword").value;
     let imageData = document.getElementById("imageToUpload").files[0];
+    document.getElementById("msg").innerHTML = "";
+    document.getElementById("uploadBtn").className = "lockBtn";
+    document.getElementById("uploadBtn").innerHTML = "Uploading Image...";
     getBase64(imageData).then((b64Data) => {
         fetch("/upload", {
             method: "post",
@@ -24,7 +26,11 @@ export function uploadImage() {
         }).then((response) => {
             if (response.status == 200) {
                 response.json().then((data) => {
-                    console.log(data);
+                    setInterval(() => {
+                        document.getElementById("uploadBtn").className = "";
+                        document.getElementById("uploadBtn").innerHTML =
+                            "Upload again";
+                    }, 3000);
                     document.getElementById("uploadBtn").innerHTML =
                         "Image Uploaded";
                     document.getElementById(
@@ -35,6 +41,7 @@ export function uploadImage() {
                         .addEventListener("click", copyLink);
                 });
             } else {
+                document.getElementById("uploadBtn").className = "lockBtn";
                 document.getElementById("uploadBtn").innerHTML =
                     "Upload Failed";
             }

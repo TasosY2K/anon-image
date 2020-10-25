@@ -29,6 +29,10 @@ switch (pathname) {
             .getElementById("clearImage")
             .addEventListener("click", checkPassword);
 
+        document.getElementById("clearImage").addEventListener("click", () => {
+            document.getElementById("msg").innerHTML = "";
+        });
+
         document
             .getElementById("imageToUpload")
             .addEventListener("input", checkPassword);
@@ -40,6 +44,10 @@ switch (pathname) {
         document
             .getElementById("imagePassword")
             .addEventListener("input", checkPassword);
+
+        document
+            .getElementById("imagePassword")
+            .addEventListener("input", checkSize);
 
         break;
     case "/i.html":

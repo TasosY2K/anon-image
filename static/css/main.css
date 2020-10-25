@@ -23,6 +23,7 @@ input:active {
     color: rgb(235, 235, 235);
     border: solid 3px rgb(235, 235, 235);
     border-radius: 0%;
+    transition-duration: 0.2s;
 }
 
 .custom-file-container__custom-file__custom-file-control:hover {
@@ -48,6 +49,7 @@ input:active {
 }
 
 #imagePassword {
+    transition-duration: 0.2s;
     background-color: transparent;
     color: rgb(235, 235, 235);
     border-width: 0 0 3px 0;
@@ -57,6 +59,7 @@ input:active {
 }
 
 #uploadBtn {
+    transition-duration: 0.2s;
     background-color: transparent;
     color: rgb(235, 235, 235);
     border: solid 3px rgb(235, 235, 235);
@@ -70,6 +73,10 @@ input:active {
 
 #passLabel {
     float: left;
+}
+
+#sizeSpan {
+    color: #d40f1c;
 }
 
 #copyHref {

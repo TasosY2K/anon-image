@@ -4,7 +4,8 @@ export function checkSize() {
     if (fileSize) {
         if (fileSize > 1) {
             document.getElementById("uploadBtn").className = "lockBtn";
-            document.getElementById("msg").innerHTML = "Image can't exceed 5MB";
+            document.getElementById("msg").innerHTML =
+                '<span id="sizeSpan">Image can\'t exceed 5MB</span>';
         } else {
             document.getElementById("msg").innerHTML = "";
         }
