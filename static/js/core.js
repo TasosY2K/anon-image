@@ -50,7 +50,7 @@ switch (pathname) {
             .getElementById("imagePassword")
             .addEventListener("input", checkSize);
 
-        setImageNumber()
+        setImageNumber();
 
         break;
     case "/i.html":

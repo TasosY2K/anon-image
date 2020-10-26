@@ -7,7 +7,8 @@ export function setImageNumber() {
         }
     }).then((response) => {
         response.json().then((data) => {
-            document.getElementById("stats").innerHTML = "Images uploaded: " + data.imageNumber;
+            document.getElementById("stats").innerHTML =
+                "Images uploaded: " + data.imageNumber;
         });
     });
 }

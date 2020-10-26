@@ -79,7 +79,8 @@ input:active {
     color: #d40f1c;
 }
 
-#copyHref, #githubHref {
+#copyHref,
+#githubHref {
     color: rgb(235, 235, 235);
 }
 
