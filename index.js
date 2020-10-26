@@ -29,7 +29,7 @@ con.connect((err) => {
         process.exit();
     }
 
-    conn.query("SELECT * FROM Images", (err, rows) => {
+    con.query("SELECT * FROM Images", (err, rows) => {
         if (err) {
             console.log(err);
             process.exit();
