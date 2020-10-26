@@ -14,7 +14,6 @@ if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir);
 
 const globalConfig = process.env;
 
-//add database error handling
 const mysqlOptions = {
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
@@ -23,6 +22,20 @@ const mysqlOptions = {
 };
 
 const con = mysql.createConnection(mysqlOptions);
+
+con.connect((err)=>{
+    if (err) {
+        console.log(err);
+        process.exit();
+    }
+
+    conn.query("SELECT * FROM Images", (err, rows)=>{
+        if (err) {
+            console.log(err);
+            process.exit();
+        }
+    });
+});
 
 app.set("json spaces", 2);
 
