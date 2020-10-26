@@ -40,8 +40,8 @@ con.connect((err) => {
 });
 
 const limiter = rateLimit({
-    windowMs: 60000,
-    max: 35
+    windowMs: 15 * 60 * 1000,
+    max: 100
 });
 
 app.set("json spaces", 2);
