@@ -7,6 +7,7 @@ uploads
 
 # Webpack Bundle
 bundle.js
+bundle.js.LICENSE.txt
 
 ### Node ###
 # Logs
