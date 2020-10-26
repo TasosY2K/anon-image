@@ -1,6 +1,8 @@
 require("dotenv").config();
+
 const fs = require("fs");
 const mysql = require("mysql");
+const rateLimit = require("express-rate-limit");
 
 const express = require("express");
 const app = express();
@@ -37,8 +39,14 @@ con.connect((err) => {
     });
 });
 
+const limiter = rateLimit({
+    windowMs: 60000,
+    max: 35
+});
+
 app.set("json spaces", 2);
 
+app.use(limiter);
 app.use(express.json({ limit: "5mb" }));
 
 (async () => {
