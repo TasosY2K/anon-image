@@ -20,7 +20,7 @@
         "express": "^4.17.2",
         "express-rate-limit": "^5.5.1",
         "moment": "^2.29.1",
-        "mysql": "^2.18.1",
+        "mysql2": "^2.3.3",
         "shortid": "^2.2.16"
     },
     "devDependencies": {
